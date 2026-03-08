@@ -1,18 +1,7 @@
 #!/bin/bash
-# auto-push-obsidian.sh - 自动推送A1989本地更改到远程服务器
-# 规则：保存文件后立即调用此脚本，但29分和59分推迟2分钟
-
-LOG_FILE="/Users/lucius/auto-push.log"
-CURRENT_MIN=$(date +%M)
-
-# 检查是否在29或59分（规避冲突窗口）
-if [[ "$CURRENT_MIN" == "29" || "$CURRENT_MIN" == "59" ]]; then
-    echo "$(date): 当前为${CURRENT_MIN}分，推迟2分钟推送以避免冲突" >> $LOG_FILE
-    sleep 120
-fi
-
-# 执行推送
-cd /Users/lucius/obsidian-mirror
-echo "$(date): 开始推送本地更改到远程..." >> $LOG_FILE
-rsync -az . luciusxu@192.168.50.2:obsidian-vault/ --delete 2>&1 >> $LOG_FILE
-echo "$(date): 推送完成" >> $LOG_FILE
+# auto-push-obsidian.sh - 警告：此脚本已停用
+# 原始设计方向有误（会用A1989镜像覆盖M4的Obsidian库）
+# 正确流程：A1989 → GitHub → M4（不直接推送到M4）
+# 如需手动触发同步，请运行：~/sync-to-github.sh
+echo '警告：此脚本已停用，请用 ~/sync-to-github.sh'
+exit 0
