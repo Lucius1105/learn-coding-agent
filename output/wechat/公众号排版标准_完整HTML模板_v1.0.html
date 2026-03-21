@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雨后甘霖公众号排版标准模板</title>
+    <style>
+        /* ===== 雨后甘霖VI色彩系统 ===== */
+        :root {
+            --wisdom-blue-deep: #0D1A63;
+            --wisdom-blue: #060E9F;
+            --harvest-gold: #FFB547;
+            --dark-grey: #414042;
+            --air-white: #FFFFFF;
+            --quote-bg: #F5F7FA;
+            --divider: #E8EBF0;
+            --light-blue: #E8F0FF;
+            --link-blue: #1A5FBD;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .article-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px 20px;
+            background: var(--air-white);
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        
+        /* 标题层级 */
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--wisdom-blue-deep);
+            line-height: 1.4;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--wisdom-blue);
+            line-height: 1.5;
+            margin-top: 36px;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+            border-left: 3px solid var(--wisdom-blue);
+            padding-left: 12px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--wisdom-blue-deep);
+            line-height: 1.5;
+            margin-top: 24px;
+            margin-bottom: 14px;
+        }
+        
+        /* 正文段落 */
+        p {
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.75;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+            text-align: justify;
+        }
+        
+        /* 引用块 */
+        blockquote {
+            background: var(--quote-bg);
+            border-left: 3px solid var(--wisdom-blue-deep);
+            padding: 16px 20px;
+            margin: 24px 0;
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        blockquote p { margin-bottom: 0; }
+        
+        /* 重点高亮 */
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(255, 181, 71, 0.35) 60%);
+            padding: 0 3px;
+            font-weight: 600;
+        }
+        
+        .data-highlight {
+            color: var(--wisdom-blue-deep);
+            font-weight: bold;
+            font-size: 17px;
+        }
+        
+        strong { color: var(--wisdom-blue-deep); font-weight: 600; }
+        em { color: var(--wisdom-blue); font-style: italic; }
+        
+        /* 列表 */
+        ul {
+            margin: 16px 0;
+            padding-left: 22px;
+        }
+        
+        ul li {
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            margin-bottom: 10px;
+            position: relative;
+            list-style: none;
+        }
+        
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: -18px;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            background: var(--wisdom-blue);
+            border-radius: 50%;
+        }
+        
+        ol {
+            margin: 16px 0;
+            padding-left: 22px;
+        }
+        
+        ol li {
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        
+        ol li::marker {
+            color: var(--wisdom-blue-deep);
+            font-weight: bold;
+        }
+        
+        /* 分割线 */
+        hr {
+            border: none;
+            height: 1px;
+            background: var(--divider);
+            margin: 32px 0;
+        }
+        
+        /* 配图占位区 */
+        .image-placeholder {
+            background: var(--light-blue);
+            border: 2px dashed var(--wisdom-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .image-placeholder-title {
+            font-size: 14px;
+            color: var(--wisdom-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .image-placeholder-desc {
+            font-size: 13px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+        
+        /* 行动号召框 */
+        .cta-box {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--quote-bg) 100%);
+            border: 1px solid var(--divider);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 28px 0;
+            text-align: center;
+        }
+        
+        .cta-box p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: var(--wisdom-blue-deep);
+        }
+        
+        /* 视频号导流占位区 */
+        .video-placeholder {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFF3CC 100%);
+            border: 2px solid var(--harvest-gold);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 28px 0;
+            text-align: center;
+        }
+        
+        .video-placeholder-title {
+            font-size: 15px;
+            color: var(--wisdom-blue-deep);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .video-placeholder-desc {
+            font-size: 13px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+        
+        .video-placeholder-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 12px;
+            font-style: italic;
+        }
+        
+        /* 相关文章推荐 */
+        .related-articles {
+            background: var(--quote-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 28px 0;
+        }
+        
+        .related-articles-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--wisdom-blue-deep);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--divider);
+        }
+        
+        .related-articles-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .related-articles-list li {
+            margin-bottom: 12px;
+            padding-left: 0;
+            position: relative;
+        }
+        
+        .related-articles-list li::before {
+            content: "→";
+            color: var(--harvest-gold);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .related-articles-list a {
+            color: var(--link-blue);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* 作者简介 */
+        .author-info {
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid var(--divider);
+        }
+        
+        .author-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--wisdom-blue-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        .author-meta { flex: 1; }
+        
+        .author-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--wisdom-blue-deep);
+        }
+        
+        .author-title {
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .author-desc {
+            font-size: 13px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+        
+        /* 标签 */
+        .tags { margin-top: 20px; }
+        
+        .tag {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--wisdom-blue);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        
+        /* 手机端适配 */
+        @media (max-width: 480px) {
+            .article-container { padding: 24px 16px; }
+            h1 { font-size: 20px; }
+            h2 { font-size: 17px; }
+            h3 { font-size: 16px; }
+            p, li { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <!-- 文章标题 -->
+        <h1>文章标题（冷静蓝，22px）</h1>
+        
+        <!-- 开头钩子 -->
+        <p>开头钩子段落，引发共鸣或提出痛点。<strong>重点文字用冷静蓝粗体</strong>，<span class="highlight">关键句用丰收金高亮</span>。</p>
+        
+        <!-- 配图占位区 -->
+        <div class="image-placeholder">
+            <div class="image-placeholder-title">📷 配图建议 #1</div>
+            <div class="image-placeholder-desc">
+                建议插入图片的描述<br>
+                例如：具体画面内容<br>
+                <em>风格：商务/质感/真实</em>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <!-- 章节标题 -->
+        <h2>章节标题（睿智蓝，18px，带左边框）</h2>
+        
+        <p>正文段落（深岩灰，15px，1.75倍行高）。<span class="data-highlight">数据高亮用冷静蓝加粗17px</span>。</p>
+        
+        <blockquote>
+            <p>引用块内容。浅灰蓝背景，左边框3px冷静蓝。</p>
+        </blockquote>
+        
+        <h3>小节标题（冷静蓝，17px）</h3>
+        
+        <ul>
+            <li>无序列表项，蓝色圆点</li>
+            <li>行距1.7倍，舒适阅读</li>
+        </ul>
+        
+        <ol>
+            <li>有序列表项</li>
+            <li>数字为冷静蓝色</li>
+        </ol>
+        
+        <hr>
+        
+        <!-- 行动号召 -->
+        <div class="cta-box">
+            <p><strong>行动号召文案</strong><br>软性引导，不直接推销</p>
+        </div>
+        
+        <!-- 视频号导流占位区 -->
+        <div class="video-placeholder">
+            <div class="video-placeholder-title">📹 视频号导流区</div>
+            <div class="video-placeholder-desc">
+                视频号导流文案<br>
+                <strong>关注视频号：@阿徐商业教练</strong>
+            </div>
+            <div class="video-placeholder-note">
+                💡 发布提示：在公众号后台此处插入视频号卡片
+            </div>
+        </div>
+        
+        <!-- 相关文章推荐 -->
+        <div class="related-articles">
+            <div class="related-articles-title">📚 相关文章推荐</div>
+            <ul class="related-articles-list">
+                <li><a href="#">→ 相关文章标题1</a></li>
+                <li><a href="#">→ 相关文章标题2</a></li>
+                <li><a href="#">→ 相关文章标题3</a></li>
+            </ul>
+        </div>
+        
+        <!-- 标签 -->
+        <div class="tags">
+            <span class="tag">#标签1</span>
+            <span class="tag">#标签2</span>
+            <span class="tag">#标签3</span>
+        </div>
+        
+        <!-- 作者简介 -->
+        <div class="author-info">
+            <div class="author-header">
+                <div class="author-avatar">徐</div>
+                <div class="author-meta">
+                    <div class="author-name">徐沛霖</div>
+                    <div class="author-title">雨后甘霖创始人 · 柳州首位ICF认证商业教练</div>
+                </div>
+            </div>
+            <div class="author-desc">
+                连续创业13年，陪跑60+企业主。专注帮助年营收100-500万的创业者解决方向、团队、客户三大卡点。信奉「借商修人，以商度人」。<br><br>
+                <strong>公众号：阿徐商业教练</strong> | 陪老板变强，让生意更好
+            </div>
+        </div>
+    </div>
+</body>
+</html>

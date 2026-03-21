@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雨后甘霖公众号文章模板</title>
+    <style>
+        /* ===== 雨后甘霖VI色彩系统 ===== */
+        :root {
+            --wisdom-blue-deep: #0D1A63;    /* 冷静蓝 - 主标题 */
+            --wisdom-blue: #060E9F;          /* 睿智蓝 - 副标题 */
+            --harvest-gold: #FFB547;         /* 丰收金 - 高亮 */
+            --dark-grey: #414042;            /* 深岩灰 - 正文 */
+            --air-white: #FFFFFF;            /* 空气白 - 背景 */
+            --quote-bg: #F5F7FA;             /* 引用背景 */
+            --divider: #E8EBF0;              /* 分割线 */
+            --light-blue: #E8F0FF;           /* 浅蓝背景 */
+            --link-blue: #1A5FBD;            /* 链接蓝 */
+        }
+        
+        /* 基础重置 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* 文章容器 */
+        .article-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px 20px;
+            background: var(--air-white);
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        
+        /* ===== 标题层级 ===== */
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--wisdom-blue-deep);
+            line-height: 1.4;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--wisdom-blue);
+            line-height: 1.5;
+            margin-top: 36px;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+            border-left: 3px solid var(--wisdom-blue);
+            padding-left: 12px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--wisdom-blue-deep);
+            line-height: 1.5;
+            margin-top: 24px;
+            margin-bottom: 14px;
+        }
+        
+        /* ===== 正文段落 ===== */
+        p {
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.75;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+            text-align: justify;
+        }
+        
+        /* ===== 引用块 ===== */
+        blockquote {
+            background: var(--quote-bg);
+            border-left: 3px solid var(--wisdom-blue-deep);
+            padding: 16px 20px;
+            margin: 24px 0;
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        blockquote p { margin-bottom: 0; }
+        
+        /* ===== 重点高亮 ===== */
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(255, 181, 71, 0.35) 60%);
+            padding: 0 3px;
+            font-weight: 600;
+        }
+        
+        .data-highlight {
+            color: var(--wisdom-blue-deep);
+            font-weight: bold;
+            font-size: 17px;
+        }
+        
+        strong { color: var(--wisdom-blue-deep); font-weight: 600; }
+        
+        em { color: var(--wisdom-blue); font-style: italic; }
+        
+        /* ===== 列表 ===== */
+        ul {
+            margin: 16px 0;
+            padding-left: 22px;
+        }
+        
+        ul li {
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            margin-bottom: 10px;
+            position: relative;
+            list-style: none;
+        }
+        
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: -18px;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            background: var(--wisdom-blue);
+            border-radius: 50%;
+        }
+        
+        ol {
+            margin: 16px 0;
+            padding-left: 22px;
+        }
+        
+        ol li {
+            font-size: 15px;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        
+        ol li::marker {
+            color: var(--wisdom-blue-deep);
+            font-weight: bold;
+        }
+        
+        /* ===== 分割线 ===== */
+        hr {
+            border: none;
+            height: 1px;
+            background: var(--divider);
+            margin: 32px 0;
+        }
+        
+        /* ===== 图片容器 ===== */
+        .image-container {
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .image-caption {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        /* ===== 配图建议标注 ===== */
+        .image-placeholder {
+            background: var(--light-blue);
+            border: 2px dashed var(--wisdom-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .image-placeholder-title {
+            font-size: 14px;
+            color: var(--wisdom-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .image-placeholder-desc {
+            font-size: 13px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+        
+        /* ===== 行动号召框 ===== */
+        .cta-box {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--quote-bg) 100%);
+            border: 1px solid var(--divider);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 28px 0;
+            text-align: center;
+        }
+        
+        .cta-box p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: var(--wisdom-blue-deep);
+        }
+        
+        /* ===== 视频号导流占位区 ===== */
+        .video-placeholder {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFF3CC 100%);
+            border: 2px solid var(--harvest-gold);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 28px 0;
+            text-align: center;
+        }
+        
+        .video-placeholder-title {
+            font-size: 15px;
+            color: var(--wisdom-blue-deep);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .video-placeholder-desc {
+            font-size: 13px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+        
+        .video-placeholder-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 12px;
+            font-style: italic;
+        }
+        
+        /* ===== 相关文章推荐 ===== */
+        .related-articles {
+            background: var(--quote-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 28px 0;
+        }
+        
+        .related-articles-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--wisdom-blue-deep);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--divider);
+        }
+        
+        .related-articles-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .related-articles-list li {
+            margin-bottom: 12px;
+            padding-left: 0;
+            position: relative;
+        }
+        
+        .related-articles-list li::before {
+            content: "→";
+            color: var(--harvest-gold);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .related-articles-list a {
+            color: var(--link-blue);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .related-articles-list a:hover {
+            text-decoration: underline;
+        }
+        
+        /* ===== 作者简介 ===== */
+        .author-info {
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid var(--divider);
+        }
+        
+        .author-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--wisdom-blue-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        .author-meta {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--wisdom-blue-deep);
+        }
+        
+        .author-title {
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .author-desc {
+            font-size: 13px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+        
+        /* ===== 标签 ===== */
+        .tags {
+            margin-top: 20px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--wisdom-blue);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        
+        /* ===== 手机端适配 ===== */
+        @media (max-width: 480px) {
+            .article-container { padding: 24px 16px; }
+            h1 { font-size: 20px; }
+            h2 { font-size: 17px; }
+            h3 { font-size: 16px; }
+            p, li { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <!-- 文章标题 -->
+        <h1>创业者最常见的三个思维陷阱</h1>
+        
+        <!-- 开头钩子 -->
+        <p>过去13年，我陪跑过60多位创业者。发现一个规律：<strong>那些最后做不下去的公司，往往不是死在竞争上，而是死在自己的思维陷阱里。</strong></p>
+        
+        <p>今天分享三个最常见的陷阱，看看你有没有踩中。</p>
+        
+        <!-- 配图建议1 -->
+        <div class="image-placeholder">
+            <div class="image-placeholder-title">📷 配图建议 #1</div>
+            <div class="image-placeholder-desc">
+                建议插入一张表现"忙碌但迷茫"的图片<br>
+                例如：深夜办公室、堆满文件的桌面、疲惫的创业者背影<br>
+                <em>风格：暗调、有质感、引发共鸣</em>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <!-- 章节一 -->
+        <h2>陷阱一：用战术勤奋掩盖战略懒惰</h2>
+        
+        <p>我见过太多老板，每天工作14小时，周末不休息，看起来比谁都努力。但一问起来，<span class="highlight">过去三年做的事，本质上没什么区别。</span></p>
+        
+        <blockquote>
+            <p>忙碌是一种自我保护。当我们忙于执行时，就可以不用面对"方向对不对"这个更难的问题。</p>
+        </blockquote>
+        
+        <p>有个做餐饮的客户，三年开了8家店，每家都在亏损。我问他："你当初为什么要做餐饮？"他说："因为朋友都说这行赚钱。"</p>
+        
+        <p>这就是典型的<span class="data-highlight">战略懒惰</span>——没有想清楚"为什么做"，就直接开干。战术上越勤奋，战略上亏得越多。</p>
+        
+        <!-- 章节二 -->
+        <h2>陷阱二：把规模当成果</h2>
+        
+        <p>很多创业者有个执念：<strong>做大=做强。</strong></p>
+        
+        <p>于是拼命扩张团队、开分公司、铺渠道。结果账面上营收涨了，利润却没了，现金流还断了。</p>
+        
+        <!-- 配图建议2 -->
+        <div class="image-placeholder">
+            <div class="image-placeholder-title">📷 配图建议 #2</div>
+            <div class="image-placeholder-desc">
+                建议插入一张表现"规模vs利润"对比的图表或示意图<br>
+                例如：上升的曲线但下降的利润率、或者"越大越虚"的视觉隐喻<br>
+                <em>风格：简洁、数据可视化、商务感</em>
+            </div>
+        </div>
+        
+        <p>我的一位客户，公司从20人扩张到80人，年营收从800万涨到2000万。听起来不错？但算下来，<span class="highlight">净利润反而从15%降到了3%</span>，老板自己比创业前还累。</p>
+        
+        <h3>怎么破？</h3>
+        
+        <ul>
+            <li>先算清楚单位经济模型，再谈扩张</li>
+            <li>关注现金流，而不仅是利润</li>
+            <li>问自己：如果明天融资断了，公司能活多久？</li>
+        </ul>
+        
+        <!-- 章节三 -->
+        <h2>陷阱三：忽视现金流</h2>
+        
+        <p>这是最容易犯的错，也是<span class="data-highlight">最致命</span>的错。</p>
+        
+        <p>很多老板看报表只看"利润"，觉得只要赚钱就没事。但现金流和利润是两回事。</p>
+        
+        <blockquote>
+            <p>利润是会计概念，现金流是生存概念。有利润没现金流，公司会死；有现金流没利润，公司还能活。</p>
+        </blockquote>
+        
+        <p>我见过账面盈利300万的公司，因为客户拖欠货款，发不出工资，最后关门。</p>
+        
+        <hr>
+        
+        <!-- 行动号召 -->
+        <div class="cta-box">
+            <p><strong>如果你也在创业路上遇到了卡点和困惑</strong><br>欢迎来找我聊聊，也许能帮你少走一些弯路。</p>
+        </div>
+        
+        <!-- 视频号导流占位区 -->
+        <div class="video-placeholder">
+            <div class="video-placeholder-title">📹 视频号导流区</div>
+            <div class="video-placeholder-desc">
+                同样的内容，我在视频号讲得更生动<br>
+                <strong>关注视频号：@阿徐商业教练</strong><br>
+                每天一条商业干货，陪你变强
+            </div>
+            <div class="video-placeholder-note">
+                💡 发布提示：在公众号后台此处插入视频号卡片
+            </div>
+        </div>
+        
+        <!-- 相关文章推荐 -->
+        <div class="related-articles">
+            <div class="related-articles-title">📚 相关文章推荐</div>
+            <ul class="related-articles-list">
+                <li><a href="#">→ 创业第一年，我亏了200万学到的10个教训</a></li>
+                <li><a href="#">→ 如何判断你的商业模式是否成立？</a></li>
+                <li><a href="#">→ 现金流管理：创业公司生死线</a></li>
+                <li><a href="#">→ 从0到1：小公司如何找到第一桶金</a></li>
+            </ul>
+        </div>
+        
+        <!-- 标签 -->
+        <div class="tags">
+            <span class="tag">#创业思维</span>
+            <span class="tag">#商业认知</span>
+            <span class="tag">#老板成长</span>
+            <span class="tag">#现金流</span>
+        </div>
+        
+        <!-- 作者简介 -->
+        <div class="author-info">
+            <div class="author-header">
+                <div class="author-avatar">徐</div>
+                <div class="author-meta">
+                    <div class="author-name">徐沛霖</div>
+                    <div class="author-title">雨后甘霖创始人 · 柳州首位ICF认证商业教练</div>
+                </div>
+            </div>
+            <div class="author-desc">
+                连续创业13年，陪跑60+企业主。专注帮助年营收100-500万的创业者解决方向、团队、客户三大卡点。信奉「借商修人，以商度人」。<br><br>
+                <strong>公众号：阿徐商业教练</strong> | 陪老板变强，让生意更好
+            </div>
+        </div>
+    </div>
+</body>
+</html>

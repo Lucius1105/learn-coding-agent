@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "openai-whisper": {
+      "name": "Openai Whisper",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=openai-whisper",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "tavily-search": {
+      "name": "Tavily Web Search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=tavily-search",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "agent-browser": {
+      "name": "Agent Browser",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=agent-browser",
+      "source": "skillhub",
+      "version": "0.2.0"
+    },
+    "self-improving-agent": {
+      "name": "self-improving-agent",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=self-improving-agent",
+      "source": "skillhub",
+      "version": "1.0.11"
+    },
+    "humanizer": {
+      "name": "Humanizer",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=humanizer",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "automation-workflows": {
+      "name": "Automation Workflows",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=automation-workflows",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "memory-hygiene": {
+      "name": "Memory Hygiene",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=memory-hygiene",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "summarize": {
+      "name": "Summarize",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=summarize",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "marketing-skills": {
+      "name": "Marketing Skills",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=marketing-skills",
+      "source": "skillhub",
+      "version": "0.1.2"
+    },
+    "markdown-converter": {
+      "name": "Markdown Converter",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=markdown-converter",
+      "source": "skillhub",
+      "version": "1.0.0"
+    }
+  }
+}

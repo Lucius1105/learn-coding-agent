@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雨后甘霖公众号排版示例</title>
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* 雨后甘霖VI色彩系统 */
+        :root {
+            --wisdom-blue-deep: #0D1A63;    /* 冷静蓝 - 主标题 */
+            --wisdom-blue: #060E9F;          /* 睿智蓝 - 副标题 */
+            --harvest-gold: #FFB547;         /* 丰收金 - 高亮点缀 */
+            --dark-grey: #414042;            /* 深岩灰 - 正文 */
+            --air-white: #FFFFFF;            /* 空气白 - 背景 */
+            --quote-bg: #F5F7FA;             /* 引用背景 */
+            --divider: #E8EBF0;              /* 分割线 */
+            --light-blue: #E8F0FF;           /* 浅蓝背景 */
+        }
+        
+        /* 文章容器 */
+        .article-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: var(--air-white);
+            font-family: "OPPO Sans 4.0", "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        
+        /* 文章标题 H1 */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--wisdom-blue-deep);
+            line-height: 1.4;
+            margin-bottom: 32px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 章节标题 H2 */
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--wisdom-blue);
+            line-height: 1.5;
+            margin-top: 40px;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+            border-left: 4px solid var(--wisdom-blue);
+            padding-left: 12px;
+        }
+        
+        /* 小节标题 H3 */
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--wisdom-blue-deep);
+            line-height: 1.5;
+            margin-top: 28px;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+        
+        /* 重点标记 H4 */
+        h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--wisdom-blue);
+            line-height: 1.6;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        /* 正文段落 */
+        p {
+            font-size: 16px;
+            color: var(--dark-grey);
+            line-height: 1.75;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            text-align: justify;
+        }
+        
+        /* 引用块 */
+        blockquote {
+            background: var(--quote-bg);
+            border-left: 4px solid var(--wisdom-blue-deep);
+            padding: 20px 24px;
+            margin: 28px 0;
+            font-size: 16px;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        blockquote p {
+            margin-bottom: 0;
+        }
+        
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 重点高亮 - 丰收金背景 */
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(255, 181, 71, 0.4) 60%);
+            padding: 0 4px;
+            font-weight: 600;
+        }
+        
+        /* 关键数据高亮 */
+        .data-highlight {
+            color: var(--wisdom-blue-deep);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* 强调文字 */
+        strong {
+            color: var(--wisdom-blue-deep);
+            font-weight: 600;
+        }
+        
+        /* 斜体 */
+        em {
+            color: var(--wisdom-blue);
+            font-style: italic;
+        }
+        
+        /* 无序列表 */
+        ul {
+            margin: 20px 0;
+            padding-left: 24px;
+        }
+        
+        ul li {
+            font-size: 16px;
+            color: var(--dark-grey);
+            line-height: 1.75;
+            margin-bottom: 12px;
+            position: relative;
+            list-style: none;
+        }
+        
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--wisdom-blue);
+            border-radius: 50%;
+        }
+        
+        /* 有序列表 */
+        ol {
+            margin: 20px 0;
+            padding-left: 24px;
+        }
+        
+        ol li {
+            font-size: 16px;
+            color: var(--dark-grey);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+        
+        ol li::marker {
+            color: var(--wisdom-blue-deep);
+            font-weight: bold;
+        }
+        
+        /* 分割线 */
+        hr {
+            border: none;
+            height: 1px;
+            background: var(--divider);
+            margin: 40px 0;
+        }
+        
+        /* 图片容器 */
+        .image-container {
+            margin: 28px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .image-caption {
+            font-size: 12px;
+            color: #999;
+            margin-top: 12px;
+            text-align: center;
+        }
+        
+        /* 行动号召框 */
+        .cta-box {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--quote-bg) 100%);
+            border: 1px solid var(--divider);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        
+        .cta-box p {
+            margin-bottom: 0;
+            font-size: 16px;
+            color: var(--wisdom-blue-deep);
+        }
+        
+        /* 作者信息 */
+        .author-info {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--divider);
+            font-size: 14px;
+            color: #999;
+        }
+        
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--wisdom-blue);
+            font-size: 13px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* 手机端适配 */
+        @media (max-width: 480px) {
+            .article-container {
+                padding: 24px 20px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 18px;
+            }
+            
+            h3 {
+                font-size: 17px;
+            }
+            
+            p, li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <!-- 文章标题 -->
+        <h1>创业者最常见的三个思维陷阱</h1>
+        
+        <!-- 开头钩子 -->
+        <p>过去13年，我陪跑过60多位创业者。发现一个规律：<strong>那些最后做不下去的公司，往往不是死在竞争上，而是死在自己的思维陷阱里。</strong></p>
+        
+        <p>今天分享三个最常见的陷阱，看看你有没有踩中。</p>
+        
+        <hr>
+        
+        <!-- 章节一 -->
+        <h2>陷阱一：用战术勤奋掩盖战略懒惰</h2>
+        
+        <p>我见过太多老板，每天工作14小时，周末不休息，看起来比谁都努力。但一问起来，<span class="highlight">过去三年做的事，本质上没什么区别。</span></p>
+        
+        <blockquote>
+            <p>忙碌是一种自我保护。当我们忙于执行时，就可以不用面对"方向对不对"这个更难的问题。</p>
+        </blockquote>
+        
+        <p>有个做餐饮的客户，三年开了8家店，每家都在亏损。我问他："你当初为什么要做餐饮？"他说："因为朋友都说这行赚钱。"</p>
+        
+        <p>这就是典型的<span class="data-highlight">战略懒惰</span>——没有想清楚"为什么做"，就直接开干。战术上越勤奋，战略上亏得越多。</p>
+        
+        <!-- 章节二 -->
+        <h2>陷阱二：把规模当成果</h2>
+        
+        <p>很多创业者有个执念：<strong>做大=做强。</strong></p>
+        
+        <p>于是拼命扩张团队、开分公司、铺渠道。结果账面上营收涨了，利润却没了，现金流还断了。</p>
+        
+        <p>我的一位客户，公司从20人扩张到80人，年营收从800万涨到2000万。听起来不错？但算下来，<span class="highlight">净利润反而从15%降到了3%</span>，老板自己比创业前还累。</p>
+        
+        <h3>怎么破？</h3>
+        
+        <ul>
+            <li>先算清楚单位经济模型，再谈扩张</li>
+            <li>关注现金流，而不仅是利润</li>
+            <li>问自己：如果明天融资断了，公司能活多久？</li>
+        </ul>
+        
+        <!-- 章节三 -->
+        <h2>陷阱三：忽视现金流</h2>
+        
+        <p>这是最容易犯的错，也是<span class="data-highlight">最致命</span>的错。</p>
+        
+        <p>很多老板看报表只看"利润"，觉得只要赚钱就没事。但现金流和利润是两回事。</p>
+        
+        <blockquote>
+            <p>利润是会计概念，现金流是生存概念。有利润没现金流，公司会死；有现金流没利润，公司还能活。</p>
+        </blockquote>
+        
+        <p>我见过账面盈利300万的公司，因为客户拖欠货款，发不出工资，最后关门。</p>
+        
+        <hr>
+        
+        <!-- 行动号召 -->
+        <div class="cta-box">
+            <p><strong>如果你也在创业路上遇到了卡点和困惑</strong><br>欢迎来找我聊聊，也许能帮你少走一些弯路。</p>
+        </div>
+        
+        <!-- 标签 -->
+        <div style="margin-top: 24px;">
+            <span class="tag">#创业思维</span>
+            <span class="tag">#商业认知</span>
+            <span class="tag">#老板成长</span>
+        </div>
+        
+        <!-- 作者信息 -->
+        <div class="author-info">
+            <p><strong>徐沛霖</strong> | 雨后甘霖创始人</p>
+            <p>柳州首位ICF认证商业教练 | 陪跑60+企业主</p>
+            <p style="margin-top: 8px;">公众号：阿徐商业教练</p>
+        </div>
+    </div>
+</body>
+</html>
