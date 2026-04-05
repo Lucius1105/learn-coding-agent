@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "agentmail": {
+      "version": "1.1.1",
+      "installedAt": 1774921981994
+    },
+    "caldav-calendar": {
+      "version": "1.0.1",
+      "installedAt": 1774922041792
+    },
+    "todoist": {
+      "version": "0.2.1",
+      "installedAt": 1774948682344
+    },
+    "weather": {
+      "version": "1.0.0",
+      "installedAt": 1774922161449
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1774935302769
+    },
+    "dida365-api": {
+      "version": "1.0.0",
+      "installedAt": 1774944362599
+    }
+  }
+}

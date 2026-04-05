@@ -1,13 +1,30 @@
 ---
 name: tavily
-description: AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.
+description: |
+  AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.
+  触发词: 联网搜索、联网、search、lookup
 homepage: https://tavily.com
 metadata: {"clawdbot":{"emoji":"🔍","requires":{"bins":["node"],"env":["TAVILY_API_KEY"]},"primaryEnv":"TAVILY_API_KEY"}}
 ---
 
-# Tavily Search
+# Tavily Search 🔍
 
 AI-optimized web search using Tavily API. Designed for AI agents - returns clean, relevant content.
+
+## 触发条件
+
+用户输入以下关键词时激活：
+- `联网搜索` / `联网`（中文）
+- `search` / `lookup` / `查找`（英文/中文）
+- `搜索一下` / `查一下` / `帮我搜`
+
+## 使用示例
+
+```
+联网搜索 水杨酸爽肤水 干性皮肤 每天用
+联网 杏仁酸 皮肤科建议
+search "quantum computing"
+```
 
 ## Search
 

@@ -1,102 +1,179 @@
-# 雨后甘霖 · AI市场总监学习日志
-# Self-Improving-Agent Memory System
+# LEARNINGS.md - 学习记录与改进日志
 
-> 记录徐总的纠正、偏好、重要决策，实现跨会话记忆
-
----
-
-## 核心记忆（Critical Memory）
-
-### 品牌定位
-- **Slogan**: 陪老板变强，让生意变好
-- **哲学**: 以商修人 · 以商渡人
-- **差异化**: 不修事，修人——修出强者内核，让生意追着你跑
-- **目标客户**: 年营收100-500万中小企业老板
-
-### 老徐语言风格（铁律）
-✅ **必须有:**
-- 开头：具体场景或人物，有画面感
-- 中段：让人停下来想的问题或共鸣点
-- 结尾：让人想截图的金句
-- 字数：100-150字（朋友圈），60-90秒（视频）
-
-❌ **绝对不能有:**
-- AI腔：赋能、底层逻辑、闭环、抓手
-- 微商感：超级干货！手慢无！强烈推荐！
-- 说教腔："你应该..." "作为老板，你必须..."
-- 贩卖焦虑："再不改变，你就完了！"
-
-✅ **老徐的声音是:**
-- 老朋友聊天（不是老师上课）
-- 有经验的人说实话（不表演"我很厉害"）
-- 承认难，不贩卖焦虑
-
-### 产品体系
-| 产品 | 价格 | 周期 | 当前状态 |
-|------|------|------|---------|
-| QR01 商业急诊室 | ¥199首单/¥980标准 | 1小时 | 获客产品 |
-| QR03 R90陪跑 | ¥14,800/季度 | 90天 | **核心产品，急需成交** |
-| QR05 R365护航 | ¥9.8万/年 | 全年 | 旗舰产品 |
-
-### 关键业务数据
-- **2026目标**: 约见100客户 → 30单R90 → ¥61.5万营收
-- **当前状态**: 财政赤字，急需接单
-- **核心瓶颈**: 99.5%的人不知道服务，缺少案例信任铺垫
-- **历史客户**: ~10个，无CCCV格式，需重新整理
+> 记录学到的知识、用户纠正、最佳实践和知识缺口。
+> 来源：self-improving-agent skill
 
 ---
 
-## 用户纠正记录（Corrections）
+## 格式模板
 
-### [COR-20260302-001] 内容质量问题
-**时间**: 2026-03-02  
-**问题**: 之前生产的案例"云里雾里"、"瞎编乱造"、"方向不行"  
-**根因**: 
-- 使用了AI虚构案例（鸭脚煲15万等）
-- 说教感重，书面语多
-- 品牌哲学浅，只是口号
+```markdown
+## [LRN-YYYYMMDD-XXX] category
 
-**改进措施**:
-- 只用真实素材，必要时明确标注"基于真实经历改编"
-- 每句不超过25字，朗读测试通顺
-- 深植"修人>修事"理念到每个内容
+**Logged**: ISO-8601 timestamp
+**Priority**: low | medium | high | critical
+**Status**: pending | in_progress | resolved | promoted | wont_fix
+**Area**: frontend | backend | infra | tests | docs | config | content | workflow
 
-**状态**: ✅ 已修正，等待真实案例素材
+### Summary
+一句话描述学到了什么
+
+### Details
+完整上下文：发生了什么、哪里错了、正确的是什么
+
+### Suggested Action
+具体的修复或改进建议
+
+### Metadata
+- Source: conversation | error | user_feedback | self_discovery
+- Related Files: path/to/file.ext
+- Tags: tag1, tag2
+- See Also: LRN-20250110-001 (相关条目)
+- Pattern-Key: (可选，用于重复模式追踪)
+- Recurrence-Count: 1 (可选)
+- First-Seen: YYYY-MM-DD (可选)
+- Last-Seen: YYYY-MM-DD (可选)
+
+---
+```
 
 ---
 
-## 技能掌握状态
+## 学习记录
 
-### 已精通（Production Ready）
-- [x] moments-official（朋友圈运营官）
-- [x] video-official（视频号脚本官）
-- [x] case-official（案例提炼官）
-- [x] xhs-official（小红书运营官）
-- [x] distribute-official（多平台分发官）
-- [x] article-official（长文撰写官）
+## [LRN-20250329-001] knowledge_gap
 
-### 学习中
-- [ ] Mem0集成（简化版已实现）
-- [ ] Prompt Engineering高级技巧
+**Logged**: 2026-03-29T19:00:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: infra
 
----
+### Summary
+Kimi K2.5 有 260096 tokens 的输入长度限制，长会话会触发 HTTP 400 错误
 
-## 待办事项（Pending Tasks）
+### Details
+之前不知道 Kimi K2.5 有明确的上下文长度限制。当会话累积太多消息或加载太多文件时，会触发 `InternalError.Algo.InvalidParameter` 错误。这不是飞书或 OpenClaw 的问题，是模型层面的限制。
 
-1. **等待真实案例素材** ← 当前阻塞项
-2. 建立内容日历（3月份完整排期）
-3. 设置自动同步到另一台机器
-4. 研究SalesGPT销售代理配置
+### Suggested Action
+1. 长会话定期使用 `/new` 重置
+2. 重要信息写入 MEMORY.md，不依赖会话记忆
+3. 避免单次加载过多大文件
 
----
-
-## 技术备注
-
-- **工作目录**: `/Users/lucius/.openclaw/workspace/`
-- **产出目录**: `output/`（待创建）
-- **休眠设置**: 已彻底禁用（pmset -a + caffeinate守护）
-- **知识库同步**: 每小时rsync + 每15分钟监控脚本
+### Metadata
+- Source: error
+- Related Files: ~/.openclaw/workspace/MEMORY.md
+- Tags: kimi, context-limit, error-handling
+- See Also: ERR-20250329-001
 
 ---
 
-*最后更新: 2026-03-02 by 市场总监*
+## [LRN-20250329-002] best_practice
+
+**Logged**: 2026-03-29T19:10:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: workflow
+
+### Summary
+成功安装并测试了 openclaw-memory-os (Memory-OS) 技能
+
+### Details
+Memory-OS 是一个"数字永生服务与认知延续基础设施"，提供：
+- 多源记忆收集（聊天、文件、代码、媒体）
+- 语义搜索（需要配置 embedding provider）
+- 时间线追踪
+- 知识图谱（计划中）
+
+安装步骤：
+1. 安装 Node.js (v20.12.0)
+2. npm install + npm run build
+3. npm link
+4. 使用 `node dist/cli/index.js` 运行
+
+当前状态：
+- 基础功能正常（init, remember, status）
+- 语义搜索需要配置 OpenAI API key 才能工作
+- 存储位置：~/.memory-os
+
+### Suggested Action
+1. 配置 embedding provider 以启用语义搜索
+2. 集成到 A1989 工作流中，自动保存重要对话
+3. 评估与现有 memory_search 工具的关系
+
+### Metadata
+- Source: self_discovery
+- Related Files: ~/.openclaw/skills/openclaw-memory-os/
+- Tags: memory-os, skill-installation, nodejs
+- See Also: FEAT-20250329-001
+
+---
+
+## [LRN-20250329-003] best_practice
+
+**Logged**: 2026-03-29T20:50:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: workflow
+
+### Summary
+成功配置 Memory-OS 本地 Embedding，实现完全免费的语义搜索
+
+### Details
+安装了 @xenova/transformers，配置了本地 embedding 模型 Xenova/all-MiniLM-L6-v2。测试搜索"商业教练"成功返回相关记忆，语义匹配正常工作。
+
+配置命令：
+```
+node dist/cli/index.js config set embedding.provider local
+node dist/cli/index.js config set embedding.model Xenova/all-MiniLM-L6-v2
+```
+
+### Suggested Action
+1. 继续使用本地 embedding，完全免费
+2. 首次使用会下载模型（约80MB）到 ~/.cache/
+3. 速度比 API 慢但完全够用
+
+### Metadata
+- Source: self_discovery
+- Related Files: ~/.openclaw/skills/openclaw-memory-os/
+- Tags: memory-os, embedding, local-model, free
+- See Also: FEAT-20250329-001
+
+---
+
+## [LRN-20250329-004] best_practice
+
+**Logged**: 2026-03-29T20:55:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: workflow
+
+### Summary
+创建了多 Bot 并发写入保护机制（文件锁）
+
+### Details
+飞书 8 个 Bot 共享同一个 A1989 后端，可能有并发写入冲突。创建了简单的文件锁脚本：
+- 位置：~/.openclaw/workspace/scripts/memory-lock.sh
+- 用法：./memory-lock.sh <bot-name> <command>
+- 机制：获取锁 → 执行命令 → 释放锁
+- 超时：最多等待 30 秒
+
+### Suggested Action
+1. 在写入 MEMORY.md 前调用锁机制
+2. 或使用 Memory-OS 作为统一存储层（它有自己的索引机制）
+
+### Metadata
+- Source: self_discovery
+- Related Files: ~/.openclaw/workspace/scripts/memory-lock.sh
+- Tags: multi-bot, concurrency, file-lock
+- See Also: FEAT-20250329-002
+
+---
+
+### 待记录
+
+- [ ] (暂无)
+
+---
+
+*创建时间: 2026-03-29*
+*技能: self-improving-agent*
