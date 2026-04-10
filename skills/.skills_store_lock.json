@@ -60,6 +60,102 @@
       "zip_url": "https://lightmake.site/api/v1/download?slug=markdown-converter",
       "source": "skillhub",
       "version": "1.0.0"
+    },
+    "memory-manager": {
+      "name": "Memory Manager",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=memory-manager",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "proactive-agent": {
+      "name": "Proactive Agent",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=proactive-agent",
+      "source": "skillhub",
+      "version": "3.1.0"
+    },
+    "web-search": {
+      "name": "Web Search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=web-search",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "ontology": {
+      "name": "Ontology",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ontology",
+      "source": "skillhub",
+      "version": "0.1.2"
+    },
+    "vision": {
+      "name": "Vision",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=vision",
+      "source": "skillhub",
+      "version": "3.4.2"
+    },
+    "voice-transcriber": {
+      "name": "Voice Transcriber",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=voice-transcriber",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "copywriter": {
+      "name": "copywriter",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=copywriter",
+      "source": "skillhub",
+      "version": "1.1.0"
+    },
+    "article-writer": {
+      "name": "Article Writer",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=article-writer",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "content-scheduler": {
+      "name": "Content Scheduler",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=content-scheduler",
+      "source": "skillhub",
+      "version": "3.1.0"
+    },
+    "file-manager": {
+      "name": "File Manager",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=file-manager",
+      "source": "skillhub",
+      "version": "1.2.0"
+    },
+    "data-analyzer": {
+      "name": "Data Analyzer",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=data-analyzer",
+      "source": "skillhub",
+      "version": "1.0.9"
+    },
+    "soulcraft": {
+      "name": "SoulCraft",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=soulcraft",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "social-media-agent": {
+      "name": "Social Media Agent",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=social-media-agent",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "style-fingerprint": {
+      "name": "style-fingerprint",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=style-fingerprint",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "lark": {
+      "name": "Lark",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=lark",
+      "source": "skillhub",
+      "version": "2.0.1"
+    },
+    "template-sds-generator": {
+      "name": "Template SDS Generator",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=template-sds-generator",
+      "source": "skillhub",
+      "version": "0.2.1"
     }
   }
 }

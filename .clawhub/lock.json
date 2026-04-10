@@ -3,11 +3,11 @@
   "skills": {
     "agentmail": {
       "version": "1.1.1",
-      "installedAt": 1774921981994
+      "installedAt": 1775765402410
     },
     "caldav-calendar": {
       "version": "1.0.1",
-      "installedAt": 1774922041792
+      "installedAt": 1775679022961
     },
     "todoist": {
       "version": "0.2.1",
@@ -24,6 +24,70 @@
     "dida365-api": {
       "version": "1.0.0",
       "installedAt": 1774944362599
+    },
+    "memory-manager": {
+      "version": "1.0.0",
+      "installedAt": 1775739170640
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1775739200405
+    },
+    "web-search": {
+      "version": "1.0.0",
+      "installedAt": 1775739399936
+    },
+    "ontology": {
+      "version": "0.1.2",
+      "installedAt": 1775739439772
+    },
+    "vision": {
+      "version": "3.4.2",
+      "installedAt": 1775739443993
+    },
+    "voice-transcriber": {
+      "version": "1.0.0",
+      "installedAt": 1775739482694
+    },
+    "copywriter": {
+      "version": "1.1.0",
+      "installedAt": 1775739490544
+    },
+    "article-writer": {
+      "version": "1.0.0",
+      "installedAt": 1775739511249
+    },
+    "content-scheduler": {
+      "version": "3.1.0",
+      "installedAt": 1775739520781
+    },
+    "file-manager": {
+      "version": "1.2.0",
+      "installedAt": 1775739778170
+    },
+    "data-analyzer": {
+      "version": "1.0.9",
+      "installedAt": 1775739824321
+    },
+    "soulcraft": {
+      "version": "1.0.0",
+      "installedAt": 1775741270835
+    },
+    "social-media-agent": {
+      "version": "1.0.0",
+      "installedAt": 1775741291770
+    },
+    "style-fingerprint": {
+      "version": "1.0.0",
+      "installedAt": 1775741300358
+    },
+    "lark": {
+      "version": "2.0.1",
+      "installedAt": 1775741308327
+    },
+    "template-sds-generator": {
+      "version": "0.2.1",
+      "installedAt": 1775741317060
     }
   }
 }
